@@ -4,7 +4,6 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -13,38 +12,37 @@ import javax.persistence.Table;
 public class Employee {
 
 	@Id
-	@GeneratedValue
-	@Column(name = "EMPLOYEE_ID")
+	@Column(name = "employee_id")
 	private Long emp_id;
 
-	@Column(name = "FIRST_NAME")
+	@Column(name = "first_name")
 	private String emp_firstname;
 
-	@Column(name = "LAST_NAME")
+	@Column(name = "last_name")
 	private String emp_lastname;
 
-	@Column(name = "EMAIL")
+	@Column(name = "email")
 	private String email;
 
-	@Column(name = "PHONE_NUMBER")
+	@Column(name = "phone_number")
 	private String phoneNo;
 
-	@Column(name = "HIRE_DATE")
+	@Column(name = "hire_date")
 	private Date date;
 
-	@Column(name = "JOB_ID")
+	@Column(name = "job_id")
 	private String jobId;
 
-	@Column(name = "SALARY")
+	@Column(name = "salary")
 	private Long salary;
 
-	@Column(name = "COMMISSION_PCT")
+	@Column(name = "commission_pct")
 	private Long commission_pct;
 
-	@Column(name = "MANAGER_ID")
+	@Column(name = "manager_id")
 	private Long manager_id;
 
-	@Column(name = "DEPARTMENT_ID")
+	@Column(name = "department_id")
 	private Long dept_id;
 
 	public Long getEmp_id() {
