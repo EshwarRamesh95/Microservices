@@ -5,8 +5,10 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import com.employee.config.PropertyConfiguration;
 import com.employee.domain.Employee;
 import com.employee.exceptions.EmployeeNotFoundException;
 import com.employee.repository.EmployeeRepository;
@@ -16,6 +18,9 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 	@Autowired
 	private EmployeeRepository employeeRepository;
+	
+	@Autowired
+	private PropertyConfiguration config;
 
 	@Override
 	public List<Employee> getEmployees() {
@@ -28,6 +33,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 	}
 
 	public Employee getEmployeeById(Long id) throws EmployeeNotFoundException {
+		System.out.println(config.getName());
 		Optional<Employee> emp = employeeRepository.findById(id);
 		if (emp.isPresent()) {
 			return emp.get();
