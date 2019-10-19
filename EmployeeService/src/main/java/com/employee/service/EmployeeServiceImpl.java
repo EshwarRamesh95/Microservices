@@ -18,9 +18,12 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 	@Autowired
 	private EmployeeRepository employeeRepository;
-	
+
 	@Autowired
 	private PropertyConfiguration config;
+	
+	@Value("${server.port}")
+	private int port;
 
 	@Override
 	public List<Employee> getEmployees() {
@@ -34,6 +37,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 	public Employee getEmployeeById(Long id) throws EmployeeNotFoundException {
 		System.out.println(config.getName());
+		System.out.println("Port :::"+port);
 		Optional<Employee> emp = employeeRepository.findById(id);
 		if (emp.isPresent()) {
 			return emp.get();
